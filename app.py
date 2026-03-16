@@ -18,7 +18,7 @@ st.set_page_config(
 )
 
 # ---------- Title ----------
-st.title("🎬 Netflix Style Movie Recommendation")
+st.title("🎬 Netflix  Movie Recommendation")
 st.write("Select a movie and get similar movie recommendations")
 
 # ---------- Load Dataset ----------
