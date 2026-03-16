@@ -1,46 +1,97 @@
-/* Netflix Style Theme */
+/* Background animation */
 
 body {
-    background-color: #141414;
+    background: linear-gradient(270deg, #141414, #000000, #1c1c1c);
+    background-size: 600% 600%;
+    animation: backgroundMove 12s ease infinite;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Title */
+/* Background animation keyframes */
+
+@keyframes backgroundMove {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+
+/* Title animation */
+
 h1 {
     color: #E50914;
     text-align: center;
     font-size: 50px;
     font-weight: bold;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
-/* Dropdown */
+/* Glow animation */
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #E50914, 0 0 20px #E50914;
+    }
+    to {
+        text-shadow: 0 0 20px #ff1f1f, 0 0 40px #ff1f1f;
+    }
+}
+
+
+/* Dropdown styling */
+
 div[data-baseweb="select"] {
     background-color: #333333;
     color: white;
+    border-radius: 8px;
 }
 
-/* Button */
-.stButton>button {
+
+/* Button styling */
+
+.stButton > button {
     background-color: #E50914;
     color: white;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-size: 18px;
+    padding: 12px 28px;
+    border-radius: 8px;
     border: none;
-}
-
-.stButton>button:hover {
-    background-color: #b20710;
-    color: white;
-}
-
-/* Recommendation text */
-.stMarkdown {
     font-size: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Button hover animation */
+
+.stButton > button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px #E50914;
+    background-color: #ff1f1f;
+}
+
+
+/* Recommended movie list animation */
+
+.stMarkdown p {
+    animation: fadeIn 1.5s ease;
+}
+
+
+/* Fade animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Center layout */
+
 .main {
-    background-color: #141414;
+    background-color: transparent;
 }
